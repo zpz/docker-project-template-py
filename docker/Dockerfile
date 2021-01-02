@@ -2,6 +2,8 @@ ARG PARENT
 FROM ${PARENT}
 USER root
 
-# example
-RUN python -m pip install --no-cache-dir 'altair>=4'
+ENV IMAGE_PARENT ${PARENT}
+
+# Just for xample
+RUN python -m pip install --no-cache-dir 'toolz>=0.10'
 
