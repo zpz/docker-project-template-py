@@ -1,4 +1,4 @@
-from huge.dummy import add
+from example.dummy import add
 
 
 def test_add():
