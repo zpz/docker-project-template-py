@@ -15,5 +15,8 @@ cmd="$(docker run --rm ${MINI} cat /usr/tools/build-docker-py)"
 # Docker repository):
 ns=zppz
 
-bash -c "${cmd}" -- --build-arg PARENT=${PARENT} --tag ${TAG} --namespace ${ns} $@
+THISDIR=$(cd $( dirname "${BASH_SOURCE[0]}") && pwd )
+NAME=$(basename ${THISDIR})
+
+bash -c "${cmd}" -- --name ${NAME} --tag ${TAG} --namespace ${ns} --build-arg PARENT=${PARENT} $@
 
