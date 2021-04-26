@@ -18,6 +18,5 @@ TAG=$(docker run --rm ${TINY} make-datetime-version)
 
 PARENT=$(bash -c "${cmd_find}" -- zppz/py3)
 
-# bash -c "${cmd_build}" -- --name ${NAME} --tag ${TAG} --namespace ${ns} --build-arg PARENT=${PARENT} $@
-bash ~/work/src/docker-mini/tools/build-docker --name ${NAME} --tag ${TAG} --namespace ${ns} --build-arg PARENT=${PARENT} $@
+bash -c "${cmd_build}" -- --name ${NAME} --tag ${TAG} --namespace ${ns} --build-arg PARENT=${PARENT} $@
 

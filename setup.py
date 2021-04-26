@@ -3,6 +3,7 @@ import pathlib
 from setuptools import setup
 
 name = 'example'
+
 HERE = pathlib.Path(__file__).parent
 
 spec = importlib.util.spec_from_file_location(
