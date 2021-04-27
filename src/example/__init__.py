@@ -1,4 +1,4 @@
-from ._version import __version__
+__version__ = '21.4.25'
 
 
 __all__ = [
