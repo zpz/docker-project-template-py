@@ -6,17 +6,7 @@ TINY=zppz/tiny:21.01.02
 cmd_find="$(docker run --rm ${TINY} cat /usr/tools/find-image)"
 MINI=$(bash -c "${cmd_find}" -- zppz/mini)
 cmd_build="$(docker run --rm ${MINI} cat /usr/tools/build-docker)"
-
-# If using namespace is desired (not necessary
-# if the image is never going to be pushed to a remote
-# Docker repository):
-ns=zppz
-
-THISDIR=$(cd $( dirname "${BASH_SOURCE[0]}") && pwd )
-NAME=$(basename ${THISDIR})
-TAG=$(docker run --rm ${TINY} make-datetime-version)
-
 PARENT=$(bash -c "${cmd_find}" -- zppz/py3)
 
-bash -c "${cmd_build}" -- --name ${NAME} --tag ${TAG} --namespace ${ns} --build-arg PARENT=${PARENT} $@
+bash -c "${cmd_build}" -- --build-arg PARENT=${PARENT} $@
 

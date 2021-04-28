@@ -7,4 +7,4 @@ The main things in the project (or "repo") is a Python package located in the di
 
 Pay attention to the config file `setup.cfg` and customize as needed.
 
-The build script [`build-docker`](./build-docker) may needs small adjustment per the need of the real project.
+The build script [`build-docker`](./build-docker) may need small adjustment per the need of the real project.
