@@ -1,6 +1,8 @@
-from example.dummy import add
+from example.dummy import total
 
 
-def test_add():
-    z = add(3, 4)
-    assert z == 7
+def test_total():
+    x = list(range(10))
+    y = sum(x)
+    z = total(x)
+    assert y == z

@@ -1,3 +1,6 @@
-def add(x: int, y: int) -> int:
-    return x + y
+from typing import Iterable
+import numpy
 
+
+def total(x: Iterable[int]) -> int:
+    return int(numpy.array(list(x)).sum())
